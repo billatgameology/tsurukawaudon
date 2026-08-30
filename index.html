@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Restaurant Name</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -13,20 +13,19 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="photo/logo.jpg" alt="Restaurant logo placeholder">
+                <img src="photo/imported/Logo.webp" alt="Tsurukawa Udon logo">
             </a>
-            <nav class="main-nav">
+            <nav class="main-nav" id="mobile-navigation">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#name-meaning">Brand</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#locations">Location</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -39,13 +38,18 @@
             <div class="hero-slideshow" aria-label="Hero photo slideshow" role="img">
                 <img
                     class="hero-slide active"
-                    src="photo/imported/9370AB2D-CAA5-4E60-A8B5-514E4ED5D418.webp"
+                    src="photo/imported/hero-1.webp"
                     alt="Restaurant hero photo 1"
                 >
                 <img
                     class="hero-slide"
-                    src="photo/imported/IMG_8534.webp"
+                    src="photo/imported/hero-2.webp"
                     alt="Restaurant hero photo 2"
+                >
+                <img
+                    class="hero-slide"
+                    src="photo/imported/hero-3.webp"
+                    alt="Salmon rose udon in a sunlit dining setting"
                 >
             </div>
             <div class="hero-overlay"></div>
@@ -77,8 +81,8 @@
             <div class="container">
                 <div class="location-wrapper">
                     <div class="location-info">
-                        <h3>[City Name]</h3>
-                        <p class="address">[Street address goes here]<br>[City, State, ZIP]</p>
+                        <h3>Tustin</h3>
+                        <p class="address">2427 Park Ave<br>Tustin, CA 92782</p>
                         <div class="hours">
                             <h4>Hours</h4>
                             <p><strong>Sunday:</strong> [00:00 AM] - [00:00 PM]</p>
@@ -86,7 +90,7 @@
                             <p><strong>Friday:</strong><br>[Lunch window]<br>[Dinner window]</p>
                             <p><strong>Saturday:</strong> [Open hours]</p>
                         </div>
-                        <a href="#" class="btn primary-btn">Add Google Maps Link</a>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Tsurukawa+Udon%2C+2427+Park+Ave%2C+Tustin%2C+CA+92782" class="btn primary-btn" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
                     </div>
                 </div>
             </div>
@@ -96,37 +100,28 @@
             <div class="container">
                 <h2 class="text-center">Gallery</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="photo/gallery/2.jpg" alt="Gallery placeholder image 1"></div>
-                    <div class="gallery-item"><img src="photo/gallery/6.jpg" alt="Gallery placeholder image 2"></div>
-                    <div class="gallery-item"><img src="photo/gallery/7.jpg" alt="Gallery placeholder image 3"></div>
-                    <div class="gallery-item"><img src="photo/gallery/8.jpg" alt="Gallery placeholder image 4"></div>
-                    <div class="gallery-item"><img src="photo/gallery/9.jpg" alt="Gallery placeholder image 5"></div>
-                    <div class="gallery-item"><img src="photo/gallery/meats.jpg" alt="Gallery placeholder image 6"></div>
-                </div>
-                <div class="text-center" style="margin-top: 40px;">
-                    <a href="#" class="btn primary-btn">Add Order Link</a>
+                    <div class="gallery-item"><img src="photo/imported/photo-02.webp" alt="Tsurukawa Udon dish 1" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-03.webp" alt="Tsurukawa Udon dish 2" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-04.webp" alt="Tsurukawa Udon dish 3" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-05.webp" alt="Tsurukawa Udon dish 4" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-06.webp" alt="Tsurukawa Udon dish 5" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-07.webp" alt="Tsurukawa Udon dish 6" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-08.webp" alt="Tsurukawa Udon dish 7" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-09.webp" alt="Tsurukawa Udon dish 8" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-10.webp" alt="Tsurukawa Udon dish 9" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-11.webp" alt="Tsurukawa Udon dish 10" loading="lazy"></div>
+                    <div class="gallery-item"><img src="photo/imported/photo-12.webp" alt="Tsurukawa Udon dish 11" loading="lazy"></div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section-padding">
-            <div class="container">
-                <div class="story-content">
-                    <h2>Our Story</h2>
-                    <p>[Paragraph 1 placeholder: what inspired the restaurant and your background.]</p>
-                    <p>[Paragraph 2 placeholder: what makes your recipes unique and how ingredients are sourced.]</p>
-                    <p>[Paragraph 3 placeholder: who you are, family/friendship/experience background.]</p>
-                    <p>[Paragraph 4 placeholder: what guests can expect at your restaurant.]</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer id="contact" class="site-footer">
         <div class="container">
             <div class="footer-content">
                 <h3>Business Contact</h3>
-                <p><a href="tel:+10000000000">[Phone placeholder]</a></p>
+                <p><a href="tel:+16578983013">(657) 898-3013</a></p>
                 <p><a href="mailto:hello@yourrestaurant.com">[Email placeholder]</a></p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/tsurukawaudon/" target="_blank" aria-label="Instagram">
@@ -140,11 +135,9 @@
                         </svg>
                     </a>
                     <a href="https://www.yelp.com/biz/tsurukawa-udon-tustin" target="_blank" aria-label="Yelp">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" fill="none"/>
-                            <g fill="currentColor">
-                                <path d="M12.271 17.512c-.175.138-1.624 1.275-1.647 1.287a.66.66 0 0 1-.903-.356c-.04-.133-.519-1.669-.578-1.852a.63.63 0 0 1 .555-.793l2.122-.151c.205-.014.38.115.43.308.048.193-.24 1.43-.979 1.557zm5.284-1.59l-1.609-1.316a.628.628 0 0 1-.214-.753c.09-.188 1.088-2.162 1.156-2.293a.664.664 0 0 1 .95-.22c.124.081 1.537 1.055 1.63 1.119.343.242.416.701.152 1.028-.264.327-1.474 2.038-2.065 2.435zm-8.306-4.66c-.148-.174-1.187-1.404-1.244-1.472a.663.663 0 0 1 .206-.965c.127-.066 1.631-.829 1.765-.879.391-.148.832.09.953.512.042.143.423 2.077.423 2.21 0 .231-.158.425-.379.455-.221.03-1.575.303-1.724.139zm3.718-1.511c-.197-.025-.362-.173-.394-.356l-.315-2.155c-.029-.2.093-.387.281-.438.188-.05 1.842-.38 1.986-.411.418-.091.824.174.906.592.028.146.315 1.707.344 1.858.108.567-.322 1.026-.933.975-.611-.051-1.678-.04-1.875-.065zm2.906 3.088c-.061-.193-1.042-2.128-1.116-2.275a.635.635 0 0 1 .353-.818c.189-.065 2.024-.609 2.17-.648.424-.112.863.136.98.557.041.148.499 1.727.543 1.874.161.543-.168 1.082-.734 1.205-.566.123-1.135.298-2.196.105z"/>
-                            </g>
+                        <!-- Yelp brand icon from Font Awesome Free, CC BY 4.0 -->
+                        <svg width="34" height="34" viewBox="0 0 384 512" fill="#ff1a1a" aria-hidden="true" focusable="false">
+                            <path d="M42.9 240.3l99.6 48.6c19.2 9.4 16.2 37.5-4.5 42.7L30.5 358.5c-3.2.8-6.4.9-9.6.3s-6.2-1.8-8.9-3.7-4.9-4.3-6.6-7.1-2.7-5.9-3.1-9.2c-3.3-28.8-.2-57.9 9-85.3 1-3.1 2.7-5.9 4.9-8.3s4.9-4.2 7.9-5.5 6.2-1.8 9.5-1.8 6.4.9 9.3 2.3zm44 239.3c23.8 16.3 50.9 27.3 79.4 32.1 3.2.6 6.5.4 9.6-.4s6.1-2.3 8.6-4.4 4.6-4.6 6-7.5 2.3-6.1 2.4-9.4l3.9-110.8c.7-21.3-25.5-31.9-39.8-16.1l-74.2 82.4c-2.2 2.4-3.8 5.3-4.8 8.4s-1.3 6.4-.9 9.6 1.5 6.3 3.1 9.1 3.9 5.2 6.6 7zm145.4-109.9 58.8 94c1.7 2.8 4 5.1 6.8 6.9s5.8 3 9 3.5 6.5.3 9.7-.5 6.1-2.4 8.6-4.4c22.3-18.4 40.3-41.5 52.7-67.6 1.4-2.9 2.1-6.1 2.2-9.4s-.6-6.5-1.9-9.4-3.2-5.7-5.6-7.8-5.2-3.9-8.3-4.9l-105.5-34.4c-20.3-6.5-37.8 15.8-26.5 33.9zm148.4-132.3c-11.5-26.5-28.7-50.2-50.4-69.3-2.4-2.1-5.3-3.7-8.4-4.7s-6.4-1.2-9.6-.8-6.3 1.5-9.1 3.2-5.1 4-6.9 6.7l-62 91.9c-11.9 17.7 4.7 40.6 25.2 34.7l106.6-30.5c3.1-.9 6-2.5 8.5-4.6s4.5-4.7 5.8-7.7 2.1-6.2 2.2-9.4-.6-6.5-1.9-9.5zM62.1 30.2c-2.8 1.4-5.4 3.3-7.4 5.7s-3.6 5.2-4.5 8.2-1.2 6.2-.9 9.3 1.3 6.1 2.9 8.9l104.1 180.3c11.7 20.2 42.6 11.9 42.6-11.4V22.9c0-3.1-.6-6.3-1.8-9.2s-3.1-5.5-5.4-7.6-5-3.8-8-4.8-6.1-1.4-9.3-1.2c-39 3.1-77 13.3-112.3 30.1z"/>
                         </svg>
                     </a>
                 </div>
@@ -163,6 +156,6 @@
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>

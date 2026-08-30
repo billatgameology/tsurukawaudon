@@ -1,11 +1,11 @@
 :root {
-  --bg: #111;
-  --bg-soft: #181414;
-  --text: #f8f2ee;
-  --muted: #bfae9d;
+  --bg: #fff;
+  --bg-soft: #f6f2ed;
+  --text: #211a16;
+  --muted: #756558;
   --accent: #d68a54;
   --accent-dark: #b06d3f;
-  --line: rgba(255, 255, 255, 0.1);
+  --line: rgba(54, 39, 29, 0.14);
   --font-main: 'Nunito', sans-serif;
   --font-heading: 'Playfair Display', serif;
 }
@@ -46,7 +46,7 @@ img {
 }
 
 .bg-dark {
-  background: #0a0a0a;
+  background: #eee7df;
 }
 
 .text-center {
@@ -80,7 +80,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.82);
+  background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid var(--line);
   z-index: 30;
 }
@@ -135,18 +135,19 @@ p {
 }
 
 .hero {
-  min-height: 92vh;
+  height: calc(100svh - 76px);
+  min-height: 560px;
+  max-height: 900px;
   margin-top: 76px;
   position: relative;
-  display: grid;
-  place-items: center;
   overflow: hidden;
-  padding: 70px 0;
+  background: #000;
 }
 
 .hero-slideshow {
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 
 .hero-slide {
@@ -156,19 +157,54 @@ p {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1s ease;
-  z-index: 0;
+  animation: hero-first-slide 15s ease-in-out infinite;
+  will-change: opacity;
 }
 
-.hero-slide.active {
-  opacity: 1;
+.hero-slide:first-child {
+  object-position: 50% 58%;
+}
+
+.hero-slide:nth-child(2) {
+  object-position: 50% 46%;
+  animation-name: hero-second-slide;
+}
+
+.hero-slide:nth-child(3) {
+  object-position: 50% 54%;
+  animation-name: hero-third-slide;
+}
+
+@keyframes hero-first-slide {
+  0%, 28% { opacity: 1; }
+  33.33%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes hero-second-slide {
+  0%, 28% { opacity: 0; }
+  33.33%, 61% { opacity: 1; }
+  66.66%, 100% { opacity: 0; }
+}
+
+@keyframes hero-third-slide {
+  0%, 61% { opacity: 0; }
+  66.66%, 95% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.14),
+    transparent 30%,
+    transparent 72%,
+    rgba(0, 0, 0, 0.28)
+  );
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -197,6 +233,48 @@ p {
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+@media (min-width: 901px) {
+  .hero-slideshow {
+    inset: 0 clamp(24px, 5vw, 96px);
+  }
+
+  .hero-slide {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 3 / 2;
+  }
+
+  .hero-slide {
+    object-fit: contain;
+  }
+
+  .hero-slide:first-child {
+    object-position: 37% 55%;
+  }
+
+  .hero-slide:nth-child(2) {
+    object-position: 47% 48%;
+  }
+
+  .hero-slide:nth-child(3) {
+    object-position: 52% 52%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation-timing-function: steps(1, end);
+  }
 }
 
 .btn {
@@ -238,7 +316,7 @@ p {
   border: 1px solid var(--line);
   padding: 24px;
   border-radius: 10px;
-  background: #19110e;
+  background: #fff;
 }
 
 .card ul {
@@ -339,13 +417,15 @@ p {
   inset: 0;
   background: rgba(0,0,0,.95);
   z-index: 60;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 48px 56px 28px;
 }
 
 .lightbox-content {
   max-width: min(94vw, 1100px);
-  max-height: 88vh;
+  max-height: calc(100svh - 120px);
   object-fit: contain;
 }
 
@@ -353,7 +433,7 @@ p {
 .lightbox-prev,
 .lightbox-next {
   position: fixed;
-  color: var(--text);
+  color: #fff;
   cursor: pointer;
   user-select: none;
 }
@@ -380,9 +460,10 @@ p {
 }
 
 .lightbox-caption {
-  color: #f3dfd0;
+  color: #fff;
   text-align: center;
-  margin-top: 6px;
+  margin-top: 12px;
+  line-height: 1.4;
 }
 
 @media (max-width: 860px) {
@@ -391,15 +472,23 @@ p {
     position: absolute;
     right: 1rem;
     top: 78px;
-    background: #0f0b09;
+    min-width: 210px;
+    color: var(--text);
+    background: #fff;
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 12px;
+    box-shadow: 0 16px 36px rgba(54, 39, 29, 0.18);
   }
 
   .main-nav ul {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 7px 10px;
   }
 
   .main-nav.active {
@@ -408,6 +497,8 @@ p {
 
   .mobile-menu-toggle {
     display: block;
+    position: relative;
+    z-index: 2;
   }
 
   .two-col,
