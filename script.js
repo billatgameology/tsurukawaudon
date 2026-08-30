@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.main-nav');
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const galleryItems = document.querySelectorAll('.gallery-item img, .menu-item img');
+  const heroSlides = document.querySelectorAll('.hero-slide');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
@@ -10,6 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.querySelector('.lightbox-next');
 
   let index = 0;
+
+  const startHeroRotation = () => {
+    if (heroSlides.length < 2) return;
+
+    let heroIndex = 0;
+
+    setInterval(() => {
+      heroSlides[heroIndex].classList.remove('active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('active');
+    }, 4500);
+  };
+
+  startHeroRotation();
 
   const show = (nextIndex) => {
     if (!galleryItems.length) return;
